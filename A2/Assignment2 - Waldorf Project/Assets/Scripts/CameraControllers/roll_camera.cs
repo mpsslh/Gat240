@@ -31,6 +31,6 @@ public class roll_camera : GameCamera
 	{
 		float yaw = Input.GetAxis("Mouse ScrollWheel");
 		if (yaw != 0)
-			transform.Rotate(yaw * movement_speed * Vector3.right, Space.Self);
+			transform.Rotate(yaw * movement_speed * Vector3.forward, Space.Self);
 	}
 }
