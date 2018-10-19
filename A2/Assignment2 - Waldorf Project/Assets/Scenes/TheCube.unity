@@ -3859,7 +3859,7 @@ Camera:
   m_GameObject: {fileID: 694745765}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   hiding_spot: {fileID: 2102108051}
   speed: 100
-  minimum_distance: 2
+  minimum_distance: 10
   custom: 97
 --- !u!81 &694745768
 AudioListener:
@@ -5100,7 +5100,7 @@ Camera:
   m_GameObject: {fileID: 904705995}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -5144,6 +5144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starting: {fileID: 619976150}
+  selected_color: {r: 0.5471698, g: 0.48546425, b: 0.069686726, a: 0}
 --- !u!1 &906262958
 GameObject:
   m_ObjectHideFlags: 0

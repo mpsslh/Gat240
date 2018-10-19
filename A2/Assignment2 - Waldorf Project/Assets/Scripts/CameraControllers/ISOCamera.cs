@@ -5,6 +5,7 @@ using UnityEngine;
 public class ISOCamera : GameCamera
 {
 	public GameObject starting;
+	public Color selected_color;
 	private Vector3 originalPos;
 	private Quaternion originalRot;
 	private readonly float orthographic_size = 3.0f;
@@ -17,6 +18,7 @@ public class ISOCamera : GameCamera
 		originalPos = this.gameObject.transform.localPosition;
 		originalRot = this.gameObject.transform.localRotation;
 		GetComponent<Camera>().orthographicSize = orthographic_size;
+		GetComponent<Camera>().backgroundColor = selected_color;
 	}
 
 	public override void ActivateCamera()

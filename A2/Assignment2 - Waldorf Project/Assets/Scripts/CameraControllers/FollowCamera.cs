@@ -12,7 +12,7 @@ public class FollowCamera : GameCamera
 	// Use this for initialization
 	void Start()
 	{
-		state = 0;
+		state = 1; //follow default on?
 		gameObject.transform.position = starting.transform.position;
 		gameObject.transform.rotation = starting.transform.rotation;
 	}
