@@ -57,8 +57,34 @@ public class MazeBehaviour : MonoBehaviour
 	private void CreateTiles(XmlDocument xml)
 	{
 		XmlElement maze = (XmlElement)xml.GetElementsByTagName("maze")[0];
+		XmlElement tile = (XmlElement)xml.GetElementsByTagName("tile")[0];
+		int xdist = int.Parse(tile.GetAttributeNode("xdist").InnerXml);
+		int zdist = int.Parse(tile.GetAttributeNode("zdist").InnerXml);
 		string tiles = maze.InnerXml;
-		string[] colummn = tiles.Split('#'); //splits strings into columns and stores them in a string array
+		string[] rows = tiles.Split('#'); //splits strings into columns and stores them in a string array
+		for (int i = 0; i < rows.Length; i++)
+		{
+			string[] columns = rows[i].Split(',');
+			for (int j = 0; j < columns.Length; j++)
+			{
+				if (columns[j] == "0")
+				{
+					GameObject g = Instantiate(open0);
+					g.GetComponent<Transform>().position = new Vector3(j * xdist, -wall1.GetComponent<Transform>().position.y, i * zdist);
+					g.transform.parent = tileContainer.GetComponent<Transform>();
+					g.name = j + "_" + i;
+					g.GetComponent<TileBehaviour>().SetLocation(j,i);
+				}
+				else if (columns[j] == "1")
+				{
+					GameObject g = Instantiate(wall1);
+					g.GetComponent<Transform>().position = new Vector3(j * xdist, 0, i * zdist);
+					g.transform.parent = tileContainer.GetComponent<Transform>();
+					g.name = j + "_" + i;
+					g.GetComponent<TileBehaviour>().SetLocation(j,i);
+				}
+			}
+		}
 	}
 
 	/// <summary>
@@ -70,6 +96,11 @@ public class MazeBehaviour : MonoBehaviour
 	private void CreateWaldorf(XmlDocument xml)
 	{
 		//xml, generate and put at location
+		XmlElement maze = (XmlElement)xml.GetElementsByTagName("maze")[0];
+		string spawn = maze.GetAttributeNode("spawn").InnerXml;
+		string[] spawn_pos = spawn.Split(',');
+		GameObject wah = Instantiate(objectContainer);
+		wah.GetComponent<WaldorfBehaviour>().SnapToTile(GameObject.Find(spawn_pos[0] +"_"+ spawn_pos[1]).GetComponent<TileBehaviour>());
 	}
 
 	/// <summary>

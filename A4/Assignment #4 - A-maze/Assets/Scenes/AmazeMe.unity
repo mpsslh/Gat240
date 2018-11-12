@@ -313,13 +313,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeData: {fileID: 4900000, guid: 32e4177b3707f8045b2672b1330fc1d2, type: 3}
   tileContainer: {fileID: 1167565653}
-  objectContainer: {fileID: 2060226383}
-  mazeCamera: {fileID: 534669904}
-  tilePrefab:
-  - {fileID: 1087559869069344, guid: d6d619a52b3ef294a9e7e70f256795e6, type: 2}
-  - {fileID: 1477914608285848, guid: ab3d16d10afbf604dbac48fb2a86e24d, type: 2}
-  waldorfPrefab: {fileID: 1876076527419166, guid: b7c39fce386642e4f84b53bb384c8c52,
+  objectContainer: {fileID: 1876076527419166, guid: b7c39fce386642e4f84b53bb384c8c52,
     type: 2}
+  mazeCamera: {fileID: 534669904}
+  open0: {fileID: 1087559869069344, guid: d6d619a52b3ef294a9e7e70f256795e6, type: 2}
+  wall1: {fileID: 1477914608285848, guid: ab3d16d10afbf604dbac48fb2a86e24d, type: 2}
 --- !u!1 &1167565653
 GameObject:
   m_ObjectHideFlags: 0
