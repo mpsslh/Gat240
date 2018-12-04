@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Waldorf.unity
+- path: Assets/Scene/Waldorf.unity
   isLoaded: 1
   isActive: 1
